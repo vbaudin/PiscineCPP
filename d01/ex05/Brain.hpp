@@ -20,6 +20,7 @@
 class Brain {
   public:
     Brain(void);
+    ~Brain(void);
     std::string identify(void);
 
     std::string adress;

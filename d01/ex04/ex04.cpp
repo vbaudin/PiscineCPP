@@ -18,6 +18,6 @@ int main(void)
 	std::string   *pointer = &string;
 	std::string   &reference = string;
 
-	std::cout << *pointeur << std::endl;
+	std::cout << *pointer << std::endl;
 	std::cout << reference << std::endl;
 }
