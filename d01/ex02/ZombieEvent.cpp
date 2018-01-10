@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#include "ZombieHorde.hpp"
 
 std::string randName(void) {
   srand((unsigned int)time(NULL));
