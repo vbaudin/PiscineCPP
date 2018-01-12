@@ -26,7 +26,7 @@ int main(void) {
   Champ->vaulthunter_dot_exe(Champ2->getName());
   Champ->vaulthunter_dot_exe(Champ2->getName());
   Champ->vaulthunter_dot_exe(Champ2->getName());
-  
+
   delete Champ;
   delete Champ2;
   delete Champ3;
