@@ -27,8 +27,8 @@ public:
   void vaulthunter_dot_exe(std::string const & target);
   void takeDamage(unsigned int amount);
   void beRepaired(unsigned int amount);
-  void setName(std::string name);
 
+  void setName(std::string name);
   std::string getName(void);
 
 private:

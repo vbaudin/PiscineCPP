@@ -15,11 +15,8 @@
 void FragTrap::initProperties(std::string name, FragTrap *fragtrap) {
   srand((unsigned int)time(NULL));
   fragtrap->_name = name;
-  fragtrap->_hitPoints = 100;
-  fragtrap->_maxHitPoints = 100;
   fragtrap->_energyPoints = 100;
   fragtrap->_maxEnergyPoints = 100;
-  fragtrap->_level = 1;
   fragtrap->_meleeAttackDamage = 30;
   fragtrap->_rangedAttackDamage = 20;
   fragtrap->_armorDamageReduction = 5;
@@ -27,10 +24,6 @@ void FragTrap::initProperties(std::string name, FragTrap *fragtrap) {
 
 std::string FragTrap::getName(void) {
   return (this->_name);
-}
-
-void FragTrap::setName(std::string name) {
-  this->_name = name;
 }
 
 FragTrap::FragTrap(void) {
@@ -50,38 +43,6 @@ FragTrap::FragTrap(FragTrap const & model) {
 
 FragTrap::~FragTrap(void) {
   std::cout << "<" << this->_name << "> I'M DEAD I'M DEAD OHMYGOD I'M DEAD!" << std::endl;
-}
-
-void FragTrap::rangedAttack(std::string const & target) {
-  std::cout << "<FR4G-TP> " << this->_name << " attacks " << target << " at range, causing " << this->_rangedAttackDamage << " points of damage !" << std::endl;
-}
-
-void FragTrap::meleeAttack(std::string const & target) {
-  std::cout << "<FR4G-TP> " << this->_name << " attacks " << target << " at melee, causing " << this->_meleeAttackDamage << " points of damage !" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount) {
-  if (this->_hitPoints == 0) {
-    std::cout << "<FR4G-TP> " << this->_name << " is already dead... Stop hitting this corpse... Cunt." << std::endl;
-  } else if (this->_hitPoints <= amount) {
-    this->_hitPoints = 0;
-    std::cout << "<FR4G-TP> " << this->_name << " has now " << this->_hitPoints << "hit points, RIP in peperonni." << std::endl;
-  } else {
-    this->_hitPoints -= amount;
-    std::cout << "<FR4G-TP> " << this->_name <<  " has take " << amount << "damages, he has now " << this->_hitPoints << "hit points." << std::endl;
-  }
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-  if (this->_hitPoints == this->_maxHitPoints) {
-    std::cout << "<FR4G-TP> " << this->_name << " is already full life... Stop doing dumb fuck things... Idiot." << std::endl;
-  } else if (this->_maxHitPoints <= (this->_hitPoints + amount)) {
-    this->_hitPoints = this->_maxHitPoints;
-    std::cout << "<FR4G-TP> " << this->_name << " has now " << this->_hitPoints << "hit points." << std::endl;
-  } else {
-    this->_hitPoints -= amount;
-    std::cout << "<FR4G-TP> " << this->_name <<  " has take " << amount << "damages, he has now " << this->_hitPoints << "hits points." << std::endl;
-  }
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target) {
